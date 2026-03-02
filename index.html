@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Avyron — Autonomous Digital Workforce</title>
+    <meta name="description" content="Avyron builds modular AI agents that automate media, operations, analytics, and business workflows." />
+    <link rel="icon" href="data:," />
+    <style>
+      :root {
+        --bg: #070A0F;
+        --card: rgba(255,255,255,.06);
+        --muted: rgba(255,255,255,.72);
+        --text: rgba(255,255,255,.92);
+        --line: rgba(255,255,255,.12);
+        --btn: rgba(255,255,255,.10);
+        --btnH: rgba(255,255,255,.16);
+        --shadow: 0 20px 60px rgba(0,0,0,.55);
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+        background: radial-gradient(1200px 700px at 15% 10%, rgba(92, 148, 255, .22), transparent 55%),
+                    radial-gradient(900px 600px at 85% 25%, rgba(160, 97, 255, .18), transparent 55%),
+                    radial-gradient(700px 700px at 55% 95%, rgba(49, 255, 214, .10), transparent 60%),
+                    var(--bg);
+        color: var(--text);
+      }
+      a { color: inherit; text-decoration: none; }
+      .wrap { max-width: 1100px; margin: 0 auto; padding: 28px 22px 80px; }
+      header {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 10px 0 24px;
+      }
+      .brand { display:flex; align-items:center; gap:10px; }
+      .logo {
+        width: 34px; height: 34px; border-radius: 10px;
+        background: linear-gradient(135deg, rgba(92,148,255,.9), rgba(160,97,255,.85));
+        box-shadow: 0 10px 30px rgba(92,148,255,.25);
+      }
+      .brand h1 { font-size: 16px; letter-spacing: .4px; margin: 0; font-weight: 650; }
+      nav { display:flex; gap:16px; }
+      nav a { color: var(--muted); font-size: 14px; }
+      nav a:hover { color: var(--text); }
+
+      .hero { padding: 46px 0 22px; }
+      .pill {
+        display:inline-flex; align-items:center; gap:10px;
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,.03);
+        padding: 8px 12px; border-radius: 999px;
+        color: var(--muted); font-size: 13px;
+      }
+      .dot { width: 8px; height: 8px; border-radius: 99px; background: rgba(49,255,214,.75); box-shadow: 0 0 18px rgba(49,255,214,.35); }
+      .hero h2 {
+        font-size: clamp(36px, 5vw, 56px);
+        line-height: 1.02;
+        margin: 18px 0 14px;
+        letter-spacing: -1px;
+      }
+      .hero p {
+        margin: 0 0 24px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.55;
+        max-width: 820px;
+      }
+      .cta { display:flex; gap:12px; flex-wrap: wrap; }
+      .btn {
+        display:inline-flex; align-items:center; justify-content:center; gap:10px;
+        padding: 12px 16px; border-radius: 12px;
+        border: 1px solid var(--line);
+        background: var(--btn);
+        color: var(--text);
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .btn:hover { background: var(--btnH); }
+      .btn.primary {
+        background: linear-gradient(135deg, rgba(92,148,255,.95), rgba(160,97,255,.9));
+        border-color: transparent;
+        box-shadow: 0 18px 60px rgba(92,148,255,.25);
+      }
+      .btn.primary:hover { filter: brightness(1.05); }
+
+      .grid {
+        display:grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 34px;
+      }
+      .card {
+        grid-column: span 12;
+        border: 1px solid var(--line);
+        background: var(--card);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(10px);
+      }
+      .card h3 { margin: 0 0 8px; font-size: 15px; letter-spacing: .2px; }
+      .card p { margin: 0; color: var(--muted); line-height: 1.55; }
+      .kpi { display:flex; gap:10px; flex-wrap: wrap; margin-top: 12px; }
+      .chip {
+        display:inline-flex; align-items:center; gap:8px;
+        border: 1px solid var(--line);
+        background: rgba(0,0,0,.18);
+        padding: 8px 10px; border-radius: 999px;
+        font-size: 13px; color: var(--muted);
+      }
+      .badge {
+        display:inline-flex; align-items:center;
+        border: 1px solid rgba(49,255,214,.35);
+        background: rgba(49,255,214,.08);
+        color: rgba(227,255,249,.95);
+        padding: 6px 10px; border-radius: 999px;
+        font-size: 12px; font-weight: 650;
+      }
+      .agents {
+        display:grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+        margin-top: 14px;
+      }
+      .agent { grid-column: span 12; }
+      .agent .top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom: 10px; }
+      .agent .name { font-weight: 700; }
+      .agent ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.6; }
+      .agent li { margin: 4px 0; }
+
+      footer { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); color: rgba(255,255,255,.55); font-size: 13px; display:flex; justify-content:space-between; gap: 12px; flex-wrap: wrap; }
+
+      @media (min-width: 860px) {
+        .card.half { grid-column: span 6; }
+        .agent { grid-column: span 6; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <h1>Avyron</h1>
+        </div>
+        <nav>
+          <a href="#agents">Agents</a>
+          <a href="#vision">Vision</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="pill"><span class="dot"></span> Autonomous Digital Workforce • Building in public</div>
+        <h2>Build once.<br/>Deploy agents that operate.</h2>
+        <p>
+          Avyron is an AI agent company creating modular digital operators that automate media, analytics, operations, and business workflows.
+          Not chatbots. Operators.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="#agents">Explore Avyron Media</a>
+          <a class="btn" href="#contact">Get updates</a>
+        </div>
+
+        <div class="grid">
+          <div class="card half">
+            <h3>What we build</h3>
+            <p>Task-focused agents that can research, decide, execute, and improve using feedback loops and automation pipelines.</p>
+            <div class="kpi">
+              <span class="chip">Modular</span>
+              <span class="chip">Automated workflows</span>
+              <span class="chip">Human-in-the-loop (MVP)</span>
+            </div>
+          </div>
+
+          <div class="card half">
+            <h3>How we ship</h3>
+            <p>Fast MVPs first. Then harden the platform: integrations, reliability, security, and orchestration.</p>
+            <div class="kpi">
+              <span class="chip">Weekly releases</span>
+              <span class="chip">Use-case led</span>
+              <span class="chip">Measured outcomes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="agents">
+        <div class="grid">
+          <div class="card">
+            <div class="top" style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+              <div>
+                <h3 style="margin-bottom:6px;">Avyron Agents</h3>
+                <p>Our first wave of agents. Each one is a module in the Avyron ecosystem.</p>
+              </div>
+              <span class="badge">v0.1</span>
+            </div>
+
+            <div class="agents">
+              <div class="card agent">
+                <div class="top">
+                  <div class="name">Avyron Media</div>
+                  <span class="badge">In development</span>
+                </div>
+                <p>Automates faceless media production: topic discovery → hook → script → voice-ready copy → publishing pack.</p>
+                <ul>
+                  <li>Idea & niche scoring</li>
+                  <li>Retention-focused scripts</li>
+                  <li>Title, thumbnail text, description + tags</li>
+                  <li>Posting plan + iteration checklist</li>
+                </ul>
+              </div>
+
+              <div class="card agent">
+                <div class="top">
+                  <div class="name">Avyron PM</div>
+                  <span class="badge" style="border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.06); color: rgba(255,255,255,.8);">Planned</span>
+                </div>
+                <p>Turns goals into epics, tickets, and execution plans with clear milestones, risks, and stakeholder updates.</p>
+                <ul>
+                  <li>Scope → roadmap → sprint plans</li>
+                  <li>Decision logs + status updates</li>
+                  <li>Risk tracking + mitigation</li>
+                </ul>
+              </div>
+
+              <div class="card agent">
+                <div class="top">
+                  <div class="name">Avyron BI</div>
+                  <span class="badge" style="border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.06); color: rgba(255,255,255,.8);">Planned</span>
+                </div>
+                <p>Transforms data into insight: KPI frameworks, dashboards, anomaly detection, and executive narratives.</p>
+                <ul>
+                  <li>KPI design + data requirements</li>
+                  <li>Insight summaries + action recommendations</li>
+                  <li>Dashboard specs</li>
+                </ul>
+              </div>
+
+              <div class="card agent">
+                <div class="top">
+                  <div class="name">Avyron Ops</div>
+                  <span class="badge" style="border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.06); color: rgba(255,255,255,.8);">Planned</span>
+                </div>
+                <p>Standardizes and automates operations: SOPs, checklists, handoffs, and automated workflows.</p>
+                <ul>
+                  <li>Process mapping → SOP generation</li>
+                  <li>Automation playbooks</li>
+                  <li>Quality + compliance checklists</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vision">
+        <div class="grid">
+          <div class="card">
+            <h3>Vision</h3>
+            <p>
+              We believe the future of work will be powered by intelligent systems — not larger teams.
+              Avyron is building modular agents that can operate entire workflows end-to-end, with measurable outcomes and continuous improvement.
+              This is not automation. This is autonomy.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="grid">
+          <div class="card">
+            <h3>Contact</h3>
+            <p>
+              Want early access to Avyron Media or to collaborate on a new agent?
+              Email <strong>hello@avyron.ai</strong> (coming soon) or reach out via your preferred channel.
+            </p>
+            <div class="cta" style="margin-top: 14px;">
+              <a class="btn" href="mailto:hello@avyron.ai">Email us</a>
+              <a class="btn" href="https://nagpurbytes.com/" target="_blank" rel="noreferrer">NagpurBytes</a>
+              <a class="btn" href="https://github.com/dhanesh939/avyron-landing" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>© <span id="y"></span> Avyron. All rights reserved.</div>
+        <div>Operated by Nagpur LLC.</div>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
