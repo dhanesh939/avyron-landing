@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PWW44BLR');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Avyron — Autonomous Digital Workforce</title>
@@ -140,6 +147,10 @@
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWW44BLR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="wrap">
       <header>
         <div class="brand">
@@ -161,8 +172,24 @@
           Not chatbots. Operators.
         </p>
         <div class="cta">
-          <a class="btn primary" href="#agents">Explore Avyron Media</a>
-          <a class="btn" href="#contact">Get updates</a>
+          <a class="btn primary" href="#agents"
+           onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({
+             event:'avyron_media_click',
+             click_text:'Explore Avyron Media',
+             agent_name:'Avyron Media',
+             lead_stage:'product_interest'
+           });">
+           Explore Avyron Media
+        </a>
+        
+        <a class="btn" href="#contact"
+           onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({
+             event:'get_updates_click',
+             click_text:'Get updates',
+             lead_stage:'early_access_interest'
+           });">
+           Get updates
+        </a>
         </div>
 
         <div class="grid">
@@ -279,9 +306,32 @@
               Email <strong>hello@avyron.ai</strong> (coming soon) or reach out via your preferred channel.
             </p>
             <div class="cta" style="margin-top: 14px;">
-              <a class="btn" href="mailto:hello@avyron.ai">Email us</a>
-              <a class="btn" href="https://nagpurbytes.com/" target="_blank" rel="noreferrer">NagpurBytes</a>
-              <a class="btn" href="https://github.com/dhanesh939/avyron-landing" target="_blank" rel="noreferrer">GitHub</a>
+             <a class="btn" href="mailto:hello@avyron.ai"
+                 onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({
+                   event:'email_click',
+                   contact_method:'email',
+                   lead_stage:'contact_intent'
+                 });">
+                 Email us
+              </a>
+              
+              <a class="btn" href="https://nagpurbytes.com/" target="_blank" rel="noreferrer"
+                 onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({
+                   event:'outbound_click',
+                   outbound_domain:'nagpurbytes.com',
+                   click_text:'NagpurBytes'
+                 });">
+                 NagpurBytes
+              </a>
+              
+              <a class="btn" href="https://github.com/dhanesh939/avyron-landing" target="_blank" rel="noreferrer"
+                 onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({
+                   event:'outbound_click',
+                   outbound_domain:'github.com',
+                   click_text:'GitHub'
+                 });">
+                 GitHub
+              </a>
             </div>
           </div>
         </div>
